@@ -12,6 +12,7 @@ module GraphQL
         description "validate GraphQL fields"
         argument :max_length, Int, required: false, description: "validate max length for String"
         argument :min_length, Int, required: false, description: "validate min length for String"
+        argument :pattern, String, required: false, description: "validate pattern for String"
         argument :max, Int, required: false, description: "validate max length for Int"
         argument :min, Int, required: false, description: "validate min length for Int"
         locations INPUT_FIELD_DEFINITION
