@@ -54,6 +54,29 @@ type Mutation {
 }
 ```
 
+*tips:* You can use shorthand `constraints:` option if you let your argument class include `GraphQL::Constraint::Directive::ConstraintArgumentKeyword` helper.
+
+```ruby
+# optional
+# in your argument class
+require 'graphql/constraint/directive/constraint_argument_keyword'
+
+module Types
+  class BaseArgument < GraphQL::Schema::Argument
+    include GraphQL::Constraint::Directive::ConstraintArgumentKeyword
+  end
+end
+```
+
+```ruby
+# optional
+class CreateBook < BaseMutation
+  argument :title, String,
+           required: true,
+           # shorthand for `directives: { GraphQL::Constraint::Directive::Constraint =>...`
+           constraints: { min_length: 1, max_length: 200 }
+```
+
 ## API
 ### String
 #### minLength
