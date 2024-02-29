@@ -80,9 +80,12 @@ Ensure value contains foo
 ```@constraint(notContains: "foo")```
 Ensure value does not contain foo
 
-#### pattern(unimplemented)
+#### pattern
 ```@constraint(pattern: "^[0-9a-zA-Z]*$")```
 Ensure value matches regex, e.g. alphanumeric
+
+> [!WARNING]
+> Unlike others, actual validation of `pattern` is not implemented. You need to implement it on your application side.
 
 ### Int/Float
 #### min
